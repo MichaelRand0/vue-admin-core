@@ -1,10 +1,10 @@
-import HomeView from '@pages/HomeView.vue'
+import { AuthView } from '@pages/auth'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView,
+    name: 'auth',
+    component: AuthView,
   },
 ]
 
