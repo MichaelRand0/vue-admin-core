@@ -21,9 +21,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@shared': path.resolve(__dirname, './src/shared'),
-      '@app': path.resolve(__dirname, './src/app'),
+      '@pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
+      '@ui': fileURLToPath(new URL('./src/shared/ui', import.meta.url)),
+      '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
     },
   },
   test: {
