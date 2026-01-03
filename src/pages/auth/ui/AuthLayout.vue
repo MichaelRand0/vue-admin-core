@@ -26,8 +26,10 @@ export default {
     }
 
     &__content {
+        display: flex;
+        justify-content: center;
         padding: ad-clamp(50, 100) ad-clamp(16, 32) ad-clamp(30, 60);
-        background-color: #2e4a57;
+        background-color: $color-bg;
         border-radius: 10px;
         max-width: ad-clamp(430, 860);
         min-height: ad-clamp(380, 780);
