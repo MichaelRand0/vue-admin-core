@@ -24,6 +24,16 @@ export default defineConfig({
       '@pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
       '@ui': fileURLToPath(new URL('./src/shared/ui', import.meta.url)),
       '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
+      '@styles': fileURLToPath(new URL('./src/shared/styles', import.meta.url)),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+        @use "@/shared/styles/functions.scss" as *;
+      `,
+      },
     },
   },
   test: {

@@ -18,8 +18,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@fontsource/roboto": "^5.2.9",
     "pinia": "^3.0.4",
     "vue": "^3.5.25",
+    "vue-i18n": "^11.2.8",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
@@ -46,6 +48,7 @@
     "npm-run-all2": "^8.0.4",
     "playwright": "^1.57.0",
     "prettier": "3.6.2",
+    "sass-embedded": "^1.97.1",
     "steiger": "^0.5.11",
     "storybook": "^10.1.11",
     "typescript": "~5.9.0",

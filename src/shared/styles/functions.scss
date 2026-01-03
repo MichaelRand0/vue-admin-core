@@ -1,0 +1,17 @@
+@use 'sass:math';
+
+@function ad-clamp($min-size, $max-size, $min-width: 480, $max-width: 1440) {
+  $add-size: $max-size - $min-size;
+  $width-diff: $max-width - $min-width;
+
+  $slope: math.div($add-size, $width-diff);
+  $y-axis-intersection: -$min-width * $slope + $min-size;
+
+  $min-rem: math.div($min-size, 16) * 1rem;
+  $max-rem: math.div($max-size, 16) * 1rem;
+  $intersection-rem: math.div($y-axis-intersection, 16) * 1rem;
+
+  $vw-value: ($slope * 100) * 1vw;
+
+  @return clamp(#{$min-rem}, #{$intersection-rem} + #{$vw-value}, #{$max-rem});
+}
