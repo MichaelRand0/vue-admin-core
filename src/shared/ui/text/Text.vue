@@ -1,13 +1,8 @@
 <script setup lang="ts">
+import type { TextProps } from './types';
 
-const props = withDefaults(defineProps<{
-    tag: "div" | "span" | "p",
-    size: "44" | "21" | "16" | "14" | "12",
-    colorPreset?: "primary",
-    color?: string,
-    className?: string,
-    font: "Roboto-400" | "Roboto-500" | "Roboto-700"
-}>(), {
+
+const props = withDefaults(defineProps<TextProps>(), {
     font: "Roboto-400",
     size: "16",
     tag: "div",
@@ -23,9 +18,9 @@ const props = withDefaults(defineProps<{
 </template>
 
 <style lang="scss" scoped>
-@use "@styles/variables.scss" as *;
-
 .text {
+
+    transition: .05s ease-in-out all;
 
     &_44 {
         font-size: ad-clamp(21, 44);
@@ -63,7 +58,7 @@ const props = withDefaults(defineProps<{
     }
 
     &_primary {
-        color: $color-brand-dark;
+        color: $color-brand;
     }
 }
 </style>

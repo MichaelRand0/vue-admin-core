@@ -1,4 +1,7 @@
 import type { Preview } from '@storybook/vue3-vite'
+import '@fontsource/roboto'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/600.css'
 
 const preview: Preview = {
   tags: ['autodocs'],
@@ -17,6 +20,16 @@ const preview: Preview = {
       test: 'todo',
     },
   },
+
+  decorators: [
+    () => ({
+      template: `
+        <div style="background: black; padding: 20px;">
+          <story />
+        </div>
+      `,
+    }),
+  ],
 }
 
 export default preview

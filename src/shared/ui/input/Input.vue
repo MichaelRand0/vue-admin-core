@@ -15,10 +15,23 @@ const props = withDefaults(defineProps<MyInputProps>(), {
 </script>
 
 <template>
-    <div :is="label">{{ label }}</div>
-    <Input v-bind="{ ...$props, ...$attrs }" placeholder="lala" />
+    <div class="field">
+        <div class="field__label" :is="label">{{ label }}</div>
+        <Input class="field__input" v-bind="{ ...$props, ...$attrs }" :bordered="true" />
+    </div>
 </template>
 
 <style lang="scss" scoped>
-@use "@styles/variables.scss" as *;
+.field {
+    &__input {
+        padding: ad-clamp(6, 9) ad-clamp(9, 12);
+        font-size: ad-clamp(14, 16);
+    }
+
+    &__label {
+        font-size: ad-clamp(16, 20);
+        color: white;
+        margin-bottom: ad-clamp(4, 8);
+    }
+}
 </style>

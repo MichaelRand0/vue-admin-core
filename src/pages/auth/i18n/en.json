@@ -1,6 +1,7 @@
 {
   "auth": {
     "login_title": "Login into account",
+    "password": "Password",
     "email": "Email"
   }
 }
