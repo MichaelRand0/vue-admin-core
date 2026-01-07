@@ -5,13 +5,13 @@ import type { TextProps } from './types';
 const props = withDefaults(defineProps<TextProps>(), {
     font: "Roboto-400",
     size: "16",
-    tag: "div",
+    tag: "span",
 })
 </script>
 
 <template>
     <component :style="colorPreset ? {} : { color }"
-        :class="[`text`, `text_${font.toLowerCase()}`, `text_${size}`, colorPreset ? `text_${colorPreset}` : ``, className ? `${className}` : ``]"
+        :class="[`text`, `text_${font.toLowerCase()}`, `text_${size}`, colorPreset ? `text_${colorPreset}` : ``, className ? `${className}` : ``, hover ? `text_hover` : ``]"
         :is="tag">
         <slot />
     </component>
@@ -19,7 +19,6 @@ const props = withDefaults(defineProps<TextProps>(), {
 
 <style lang="scss" scoped>
 .text {
-
     transition: .05s ease-in-out all;
 
     &_44 {
@@ -59,6 +58,16 @@ const props = withDefaults(defineProps<TextProps>(), {
 
     &_primary {
         color: $color-brand;
+    }
+
+    &_hover {
+        pointer-events: all;
+
+        &.text_primary {
+            &:hover {
+                color: white;
+            }
+        }
     }
 }
 </style>

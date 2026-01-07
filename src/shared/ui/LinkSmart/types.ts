@@ -5,5 +5,4 @@ export interface TextProps {
   color?: string
   font?: 'Roboto-400' | 'Roboto-500' | 'Roboto-700'
   className?: string
-  hover?: boolean
 }

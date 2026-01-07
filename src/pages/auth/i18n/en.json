@@ -2,6 +2,11 @@
   "auth": {
     "login_title": "Login into account",
     "password": "Password",
+    "password_forget": "Forgot your password?",
+    "login": "Sign in",
+    "no_account": "Not registered?",
+    "register": "Sign up",
+    "policy": "I agree to comply with the [Terms of Use] and [Privacy Policy]",
     "email": "Email"
   }
 }

@@ -3,7 +3,7 @@ import { Text, type TextProps } from '@ui/Text';
 
 interface Props {
     href: string;
-    textProps: TextProps
+    textProps?: TextProps
 }
 
 const props = withDefaults(defineProps<Props>(), {

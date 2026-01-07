@@ -22,7 +22,7 @@ const toggle = () => {
 </script>
 
 <template>
-    <Button v-on:click="toggle"
+    <Button type="text" v-on:click="toggle"
         :class="[`buttonCheckbox`, variant ? `buttonCheckbox_${variant}` : ``, { 'buttonCheckbox_active': modelValue }]"
         v-bind="{ ...$attrs }">
         <div class="buttonCheckbox__figure"></div>
@@ -39,6 +39,12 @@ const toggle = () => {
     border: none;
     padding: 0;
     color: white;
+    white-space: normal;
+    text-align: start;
+
+    * {
+        width: 100%;
+    }
 
     &:hover {
         color: white;
