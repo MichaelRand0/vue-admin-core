@@ -13,9 +13,9 @@
         </div>
         <div class="form__item form__footer">
             <Text color="white" size="21" font="Roboto-400">{{ $t("auth.no_account") }}&nbsp;</Text>
-            <Button variant="only-text">
+            <RouterLink to="/registration">
                 <Text hover color-preset="primary" size="21">{{ $t("auth.register") }}</Text>
-            </Button>
+            </RouterLink>
         </div>
     </div>
 </template>

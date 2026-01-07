@@ -26,6 +26,7 @@ export default {
     }
 
     &__content {
+        position: relative;
         display: flex;
         justify-content: center;
         padding: ad-clamp(50, 100) ad-clamp(16, 32) ad-clamp(30, 60);

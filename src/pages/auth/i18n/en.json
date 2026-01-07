@@ -5,8 +5,14 @@
     "password_forget": "Forgot your password?",
     "login": "Sign in",
     "no_account": "Not registered?",
+    "have_account": "Have account?",
     "register": "Sign up",
+    "register_title": "Create your account",
     "policy": "I agree to comply with the [Terms of Use] and [Privacy Policy]",
-    "email": "Email"
+    "email": "Email",
+    "email_short": "Email",
+    "email_verification": "Email verification",
+    "data": "Data",
+    "finish": "Finishing"
   }
 }

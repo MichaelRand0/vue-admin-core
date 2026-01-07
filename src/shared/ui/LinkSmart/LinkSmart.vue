@@ -18,9 +18,10 @@ const parts = computed(() => parseTranslation(t(props.path)));
     <span>
         <template v-for="(part, index) in parts" :key="index">
             <slot v-if="part.isMatch && part.key" name="link" :text="part.text">
-                <Link :href="links[part.key] ?? '#'">{{ part.text }}</Link>
+                <Link :href="links[part.key] ?? '#'">{{ index === 0 ? part.text : part.text?.toLowerCase() }}</Link>
             </slot>
-            <Text tag="span" v-else size="16" font="Roboto-400">{{ part.text }}</Text>
+            <Text tag="span" v-else size="16" font="Roboto-400">{{ index === 0 ? part.text : part.text?.toLowerCase()
+            }}</Text>
         </template>
     </span>
 </template>
