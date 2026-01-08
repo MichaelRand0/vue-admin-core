@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="form">
-        <BarSteps :steps="steps" />
+        <BarSteps :value="2" :steps="steps" />
         <Text font="Roboto-500" size="44" color="white" tag="div">{{ $t("auth.register_title") }}</Text>
         <div class="form__item">
             <Input :label='$t("auth.email")' />

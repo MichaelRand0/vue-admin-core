@@ -9,7 +9,8 @@
       "@ui/*": ["src/shared/ui/*"],
       "@styles/*": ["src/shared/styles/*"],
       "@app/*": ["src/app/*"]
-    }
+    },
+    "types": ["unplugin-icons/types/vue"]
   },
   "files": [],
   "references": [

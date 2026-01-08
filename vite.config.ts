@@ -3,6 +3,9 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import Icons from 'unplugin-icons/vite'
+import Components from 'unplugin-vue-components/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vite.dev/config/
 import path from 'node:path'
@@ -16,7 +19,18 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
-    // vueDevTools()
+    Components({
+      dts: true,
+      resolvers: [
+        IconsResolver({
+          prefix: 'icon',
+        }),
+      ],
+    }),
+    Icons({
+      compiler: 'vue3',
+      autoInstall: true,
+    }),
   ],
   resolve: {
     alias: {
