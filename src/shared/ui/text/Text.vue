@@ -18,56 +18,57 @@ const props = withDefaults(defineProps<TextProps>(), {
 </template>
 
 <style lang="scss" scoped>
+@use 'sass:list';
+
 .text {
     transition: .05s ease-in-out all;
 
-    &_44 {
-        font-size: ad-clamp(21, 44);
+    $sizes: (
+        "44": (21, 44),
+        "21": (16, 21),
+        "16": (14, 16),
+        "14": (12, 14),
+        "12": (10, 12)
+    );
+
+@each $name, $values in $sizes {
+    &_#{$name} {
+        font-size: ad-clamp(list.nth($values, 1), list.nth($values, 2));
     }
+}
 
-    &_21 {
-        font-size: ad-clamp(16, 21);
-    }
+&_roboto-400 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
 
-    &_16 {
-        font-size: ad-clamp(14, 16);
-    }
+&_roboto-500 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
 
-    &_14 {
-        font-size: ad-clamp(12, 14);
-    }
+&_roboto-600 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
 
-    &_12 {
-        font-size: ad-clamp(10, 12);
-    }
+&_primary {
+    color: $color-brand;
+}
 
-    &_roboto-400 {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-    }
+&_link {
+    color: $color-brand-light;
+}
 
-    &_roboto-500 {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 500;
-    }
+&_hover {
+    pointer-events: all;
 
-    &_roboto-600 {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 600;
-    }
-
-    &_primary {
-        color: $color-brand;
-    }
-
-    &_hover {
-        pointer-events: all;
-
-        &.text_primary {
-            &:hover {
-                color: white;
-            }
+    &.text_primary,
+    &.text_link {
+        &:hover {
+            color: white;
         }
     }
+}
 }
 </style>

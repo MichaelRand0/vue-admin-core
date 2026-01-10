@@ -3,11 +3,11 @@
         <template #header>
             <BarSteps :value="0" :steps="steps" />
         </template>
-        <Input :label='$t("auth.email")' />
+        <RegisterEmail />
         <template #footer>
             <Text color="white" size="21" font="Roboto-400">{{ $t("auth.have_account") }}&nbsp;</Text>
             <RouterLink to="login">
-                <Text hover color-preset="primary" size="21">{{ $t("auth.login") }}</Text>
+                <Text hover color-preset="link" size="21">{{ $t("auth.login") }}</Text>
             </RouterLink>
         </template>
     </AuthLayoutForm>
@@ -15,9 +15,13 @@
 <script setup lang="ts">
 import { AuthLayoutForm } from '@ui/AuthLayoutForm';
 import { BarSteps } from '@ui/BarSteps';
+import { Button } from '@ui/Button';
+import { ButtonCheckbox } from '@ui/ButtonCheckbox';
 import { Input } from '@ui/Input';
+import { LinkSmart } from '@ui/LinkSmart';
 import { Text } from '@ui/Text';
 import { useI18n } from 'vue-i18n';
+import RegisterEmail from './RegisterEmail.vue';
 
 const { t } = useI18n()
 

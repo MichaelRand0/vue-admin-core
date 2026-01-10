@@ -18,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
     <a :href="props.href" target="_blank" class="link">
-        <Text v-bind="textProps" color-preset="primary">
+        <Text v-bind="textProps" color-preset="link">
             <slot />
         </Text>
     </a>

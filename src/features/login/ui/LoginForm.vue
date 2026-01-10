@@ -11,7 +11,7 @@
         <template #footer>
             <Text color="white" size="21" font="Roboto-400">{{ $t("auth.no_account") }}&nbsp;</Text>
             <RouterLink to="/registration">
-                <Text hover color-preset="primary" size="21">{{ $t("auth.register") }}</Text>
+                <Text hover color-preset="link" size="21">{{ $t("auth.register") }}</Text>
             </RouterLink>
         </template>
     </AuthLayoutForm>
