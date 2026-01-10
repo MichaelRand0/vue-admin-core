@@ -39,6 +39,7 @@ export default defineConfig({
       '@ui': fileURLToPath(new URL('./src/shared/ui', import.meta.url)),
       '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
       '@styles': fileURLToPath(new URL('./src/shared/styles', import.meta.url)),
+      '@features': fileURLToPath(new URL('./src/features', import.meta.url)),
     },
   },
   css: {
